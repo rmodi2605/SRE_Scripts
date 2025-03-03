@@ -7,7 +7,6 @@ from colorama import Fore, Style
 
 
 # List of Web Services
-# Load environment variables from .env file
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 services = [{"name": "Jenkins", "url" : "http://192.168.152.128:8080"},
             {"name": "Prometheus", "url" : "http://192.168.152.128:9090"},
