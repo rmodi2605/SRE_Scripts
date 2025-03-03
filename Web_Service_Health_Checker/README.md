@@ -12,6 +12,7 @@ The objective of this Project is to continuously check multiple web service endp
 
 - Linux
 
+<br>
 
 ## Prerequisites
 Genrate App Password for Trigger email on Gmail OR your Chosen email platform. 
@@ -28,6 +29,7 @@ Here, I used Gmail for gettting email alert.
 7. Copy App Password (16-character app password) immediately as it can only be viewed once.
 <br> Save it somewhere safe.
 
+<br>
 
 ## Initial Steps
 1. Add email key in Linux environment variable
