@@ -2,6 +2,7 @@
 
 The objective of this Project is to continuously check multiple web service endpoint health and get an email alert if any endpoint is either unreachable or any error, exception occurs.
 <br>
+<br>
 
 ## Technology Used for the Project
 
@@ -10,6 +11,7 @@ The objective of this Project is to continuously check multiple web service endp
 - SMTP
 
 - Linux
+
 <br>
 
 ## Prerequisites
@@ -28,7 +30,6 @@ Here, I used Gmail for gettting email alert.
 <br> Save it somewhere safe.
 
 <br>
-
 
 ## Initial Steps
 1. Add email key in Linux environment variable
@@ -68,57 +69,57 @@ python Web_Service_Health_Checker.py
 
 ## Demonstration
 ``` bash
-2025-03-03 11:56:13.898211 : Jenkins Service is Healthy
+✅ 2025-03-03 13:17:03.253390 => Jenkins Service is Healthy
 
-Web Url : http://192.168.152.128:8080
+🌐 Web Url : http://192.168.152.128:8080
 
-Response time : 0.01085
+⌚ Response time : 0.012169
 
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 
-2025-03-03 11:56:13.912291 : Prometheus Service is Healthy
+✅ 2025-03-03 13:17:03.260800 => Prometheus Service is Healthy
 
-Web Url : http://192.168.152.128:9090
+🌐 Web Url : http://192.168.152.128:9090
 
-Response time : 0.008168
+⌚ Response time : 0.002035
 
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 /root/py_envs/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'github.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(
 
 
-2025-03-03 11:56:14.887005 : GitHub Service is Healthy
+✅ 2025-03-03 13:17:03.725741 => GitHub Service is Healthy
 
-Web Url : https://github.com/
+🌐 Web Url : https://github.com/
 
-Response time : 0.598311
+⌚ Response time : 0.332207
 
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 /root/py_envs/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.io'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(
 
 
-2025-03-03 11:56:16.193711 : Prometheus_error_link is NOT Reachable !!
+❌ 2025-03-03 13:17:07.157247 => Prometheus_error_link is NOT Reachable !!
 
-Web Url : https://prometheus.io/events/
+🌐 Web Url : https://prometheus.io/events/
 
-HTTP Status Code : 404
+🔍 HTTP Status Code : 404
 
-Response Time : 1.278256
+⌚ Response Time : 3.428108
 
-Email alert sent successfully.
+📧 Email alert sent successfully.
 
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 
-2025-03-03 11:56:41.754163 : Not_exist_url Service Fetching Error!
+🚫 2025-03-03 13:17:32.835267 => Not_exist_url Service Fetching Error !!
 
-Web Url : https://192.168.254.254/
+🌐 Web Url : https://192.168.254.254/
 
-HTTPSConnectionPool(host='192.168.254.254', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ec5c8b012b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+⛔ Error Detail : HTTPSConnectionPool(host='192.168.254.254', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7358fa88d760>: Failed to establish a new connection: [Errno 111] Connection refused'))
 
-Email alert sent successfully.
+📧 Email alert sent successfully.
 
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
@@ -130,21 +131,20 @@ Email alert sent successfully.
 * * * * * * * * * * * * * * * * * * * * * * * *
 
 
-2025-03-03 11:57:01.573744 : Jenkins Service is Healthy
+✅ 2025-03-03 13:17:52.442144 => Jenkins Service is Healthy
 
-Web Url : http://192.168.152.128:8080
+🌐 Web Url : http://192.168.152.128:8080
 
-Response time : 0.013925
+⌚ Response time : 0.010943
 
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 
-2025-03-03 11:57:01.583842 : Prometheus Service is Healthy
+✅ 2025-03-03 13:17:52.448848 => Prometheus Service is Healthy
 
-Web Url : http://192.168.152.128:9090
+🌐 Web Url : http://192.168.152.128:9090
 
-Response time : 0.00181
-
+⌚ Response time : 0.001942
 .
 .
 .
@@ -155,24 +155,22 @@ Response time : 0.00181
 
 
 ### Email Alert IF web service is Unreachable
-![Email Alert for Timeout](images/Email_Alert _For_Timeout_Error.jpg)
+![Email_Alert _For_Timeout_Error](https://github.com/rmodi2605/SRE_Scripts/blob/main/Web_Service_Health_Checker/images/Email_Alert%20_For_Timeout_Error.jpg)
 <br>
 <br>
 
 
 ### Email Alert IF web servicce exception occurs
-![Email Alert for Unreachable](images/Email_Alert _For_Unreachable.jpg)
+![Email_Alert _For_Unreachable](https://github.com/rmodi2605/SRE_Scripts/blob/main/Web_Service_Health_Checker/images/Email_Alert%20_For_Unreachable.jpg)
 
 <br>
 
 
 ## Scope of Application
-- The Script Can be tringger with desired frequency with  <code style="color : red">**CronJob**</code>
-<br>
-<br>
-
-- It can be also use as a <code style="color : red">**Linux Web Health Check Service**</code>
-<br>
+- The Script Can be trigger with desired frequency with  <code style="color : Red">**CronJob**</code>
 <br>
 
-- The Script can integrate with any <code style="color : red">**Monitoring Platfroms**</code> to continuously check web Health Check every few minutes or seconds.
+- It can be also use as a <code style="color : Red">**Linux Web Health Check Service**</code>
+<br>
+
+- The Script can integrate with any <code style="color : Red">**Monitoring Platfroms**</code> to continuously check web Health Check every few minutes or seconds.

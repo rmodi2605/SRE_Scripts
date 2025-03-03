@@ -41,10 +41,10 @@ def send_email_alert(web_name, web_url, downtime, http_code):
             email_server.starttls()
             email_server.login(email_from, email_pass)
             email_server.send_message(email_msg)
-            print("\nEmail alert sent successfully.")
+            print("\n📧 Email alert sent successfully.")
     except Exception as email_excep:
-            print(f"\nFailed to send email alert.")
-            print(f"\nReason to Failed send email : {email_excep}")
+            print(f"\n⛔ Failed to send email alert.")
+            print(f"\n📝 Reason to Failed send email : {email_excep}")
 
 
 # Send email alert if service exception occurs
@@ -60,7 +60,7 @@ def send_exeception_email_alert(web_name, web_url, downtime, web_execption):
     🚫 {web_name} web service fetching error occured !! \n\n
     ⌚ Last Check Time =  {downtime} \n\n
     🌐 Web Service URL = {web_url}\n\n
-    ❌ Web Fetching Error = {web_execption} \n\n
+    ⛔ Web Fetching Error = {web_execption} \n\n
     👀 Please investigate the web service issue.""")
 
     email_msg = MIMEText(email_body)
@@ -73,10 +73,10 @@ def send_exeception_email_alert(web_name, web_url, downtime, web_execption):
             email_server.starttls()
             email_server.login(email_from, email_pass)
             email_server.send_message(email_msg)
-            print("\nEmail alert sent successfully.")
+            print("\n📧 Email alert sent successfully.")
     except Exception as email_excep:
-            print(f"\nFailed to send email alert.")
-            print(f"\nReason to Failed send email : {email_excep}")
+            print(f"\n⛔ Failed to send email alert.")
+            print(f"\n📝 Reason to Failed send email : {email_excep}")
 
 
 # Check Service Health
@@ -89,21 +89,21 @@ def check_web_service():
             service_name = service['name']
             service_response = requests.get(service['url'], verify=False)
             if service_response.status_code == 200 or service_response.status_code == 403:
-                print(Fore.GREEN + f"\n\n{datetime.datetime.now()} : {service_name} Service is Healthy" + Style.RESET_ALL)
-                print(f"\nWeb Url : {service_url}")
-                print(f"\nResponse time : {service_response.elapsed.total_seconds()}")
+                print(Fore.GREEN + f"\n\n✅ {datetime.datetime.now()} => {service_name} Service is Healthy" + Style.RESET_ALL)
+                print(f"\n🌐 Web Url : {service_url}")
+                print(f"\n⌚ Response time : {service_response.elapsed.total_seconds()}")
                 print("\n= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ")
             else:
-                print(Fore.RED + f"\n\n{datetime.datetime.now()} : {service_name} is NOT Reachable !!" + Style.RESET_ALL)
-                print(f"\nWeb Url : {service_url}")
-                print(f"\nHTTP Status Code : {service_response.status_code}")
-                print(f"\nResponse Time : {service_response.elapsed.total_seconds()}")
+                print(Fore.RED + f"\n\n❌ {datetime.datetime.now()} => {service_name} is NOT Reachable !!" + Style.RESET_ALL)
+                print(f"\n🌐 Web Url : {service_url}")
+                print(f"\n🔍 HTTP Status Code : {service_response.status_code}")
+                print(f"\n⌚ Response Time : {service_response.elapsed.total_seconds()}")
                 send_email_alert(service_name, service_url, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), service_response.status_code)
                 print("\n= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ")
         except requests.exceptions.RequestException as exception:
-                print(Fore.RED + f"\n\n{datetime.datetime.now()} : {service_name} Service Fetching Error!" + Style.RESET_ALL)
-                print(f"\nWeb Url : {service_url}")
-                print(f"\n{exception}")
+                print(Fore.RED + f"\n\n🚫 {datetime.datetime.now()} => {service_name} Service Fetching Error !!" + Style.RESET_ALL)
+                print(f"\n🌐 Web Url : {service_url}")
+                print(f"\n⛔ Error Detail : {exception}")
                 send_exeception_email_alert(service_name, service_url, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), exception)
                 print("\n= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ")
 
