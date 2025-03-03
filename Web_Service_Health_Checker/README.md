@@ -155,13 +155,13 @@ python Web_Service_Health_Checker.py
 
 
 ### Email Alert IF web service is Unreachable
-![Email_Alert _For_Timeout_Error](https://github.com/rmodi2605/SRE_Scripts/blob/main/Web_Service_Health_Checker/images/Email_Alert%20_For_Timeout_Error.jpg)
+![Email_Alert _For_Timeout_Error](https://github.com/rmodi2605/SRE_Scripts/blob/main/Web_Service_Health_Checker/images/Email_Alert%20_For_Unreachable.jpg)
 <br>
 <br>
 
 
-### Email Alert IF web service exception occurs
-![Email_Alert _For_Unreachable](https://github.com/rmodi2605/SRE_Scripts/blob/main/Web_Service_Health_Checker/images/Email_Alert%20_For_Unreachable.jpg)
+### Email Alert IF web service Exception occurs
+![Email_Alert _For_Unreachable](https://github.com/rmodi2605/SRE_Scripts/blob/main/Web_Service_Health_Checker/images/Email_Alert%20_For_Timeout_Error.jpg)
 
 <br>
 
