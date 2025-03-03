@@ -3,8 +3,6 @@
 The objective of this Project is to continuously check multiple web service endpoint health and get an email alert if any endpoint is either unreachable or any error, exception occurs.
 <br>
 
-
-
 ## Technology Used for the Project
 
 - Python
@@ -13,23 +11,22 @@ The objective of this Project is to continuously check multiple web service endp
 
 - Linux
 <br>
- 
 
 ## Prerequisites
 Genrate App Password for Trigger email on Gmail OR your Chosen email platform. 
 
 Here, I used Gmail for gettting email alert.
 
-1. Login TO Gmail
+1. Login into Gmail Account
 2. Go to **Manage your Google Account**
 3. Select **Security**
 4. Enable Two-Step Verification
 5. Once 2-Step Verification is enabled, return to the Security tab
-<br>
-Scroll down and click on App Passwords.
+<br> Scroll down and click on App Passwords.
 6. Generate an App Password
 7. Copy App Password (16-character app password) immediately as it can only be viewed once.
 <br> Save it somewhere safe.
+
 <br>
 
 
@@ -70,7 +67,7 @@ python Web_Service_Health_Checker.py
 
 
 ## Demonstration
-``` console
+``` bash
 2025-03-03 11:56:13.898211 : Jenkins Service is Healthy
 
 Web Url : http://192.168.152.128:8080
@@ -159,6 +156,9 @@ Response time : 0.00181
 
 ### Email Alert IF web service is Unreachable
 ![Email Alert for Timeout](images/Email_Alert _For_Timeout_Error.jpg)
+<br>
+<br>
+
 
 ### Email Alert IF web servicce exception occurs
 ![Email Alert for Unreachable](images/Email_Alert _For_Unreachable.jpg)
@@ -170,6 +170,7 @@ Response time : 0.00181
 - The Script Can be tringger with desired frequency with  <code style="color : red">**CronJob**</code>
 <br>
 <br>
+
 - It can be also use as a <code style="color : red">**Linux Web Health Check Service**</code>
 <br>
 <br>
